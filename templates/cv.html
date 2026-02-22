@@ -2,86 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Resume - C++ Developer</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            margin: 0;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        .cv-container {
-            background-color: #2d2d2d;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            max-width: 600px;
-            width: 100%;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patryk Jóźwiak - Resume</title>
 
-        /* Nowe style do układu wizytówki */
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .profile-info h1, .profile-info h3 {
-            margin: 5px 0;
-        }
-
-        h1 { color: #4da6ff; }
-        .skill {
-            background-color: #4da6ff;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 5px 5px 0 0;
-            font-weight: bold;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
-<div class="cv-container">
+<body class="bg-light">
 
-    <div class="profile-header">
-        <div class="profile-image-container">
-            <img src="/static/myphoto.png" alt="My Picture" style="width: 150px; border-radius: 50%;">
+<div class="container mt-5 mb-5">
+
+    <div class="row align-items-center bg-white p-5 shadow-sm rounded-4 mb-5">
+        <div class="col-md-4 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+            <img src="/static/myphoto.png" alt="Profile Picture" class="shadow" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%;">
         </div>
-        <div class="profile-info">
-            <h1>Patryk Jóźwiak</h1>
-            <a href="/contact">Contact Me</a>
-            <h3>Aspiring C++ Developer</h3>
-            <p>Hi! I'm learning to write efficient C++ code, and this is my custom web server built with the Crow framework.</p>
+
+        <div class="col-md-8">
+            <h1 class="display-5 fw-bold text-dark mb-1">Patryk Jóźwiak</h1>
+            <h2 class="text-secondary fs-4 mb-4">Aspiring Software Engineer / C++ Developer</h2>
+
+            <p class="lead text-muted mb-4">
+                Hi! I'm learning to write efficient C++ code, and this is my custom web server built with the Crow framework.
+            </p>
+
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Contact Me</a>
+                <a href="https://www.linkedin.com/in/patryk-jóźwiak-7711b7306/" target="_blank" class="btn btn-outline-primary px-4 py-2 fw-semibold">LinkedIn</a>
+                <a href="https://github.com/TwojNick" target="_blank" class="btn btn-outline-dark px-4 py-2 fw-semibold">GitHub</a>
+            </div>
         </div>
     </div>
 
-    <h2>🛠️ Technologies:</h2>
-    <div class="skill">C++</div>
-    <div class="skill">CMake</div>
-    <div class="skill">Crow Framework</div>
-    <div class="skill">QT Framework</div>
-    <div class="skill">SFML Library</div>
+    <div class="row">
+        <div class="col-12">
+            <h3 class="fw-bold mb-4 text-dark">
+                My Projects <span class="badge bg-secondary fs-6 align-middle">{{project_count}}</span>
+            </h3>
 
-    <h2>Number of projects: {{ project_count }}</h2>
-
-    <h3>My projects:</h3>
-    {{#projects}}
-    <div style="background-color: #3d3d3d; padding: 15px; margin-top: 10px; border-radius: 5px;">
-        <h4 style="margin-top: 0; color: #ff9900;">{{name}}</h4>
-        <p>{{description}}</p>
+            <div class="row">
+                {{#projects}}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold text-dark">{{name}}</h4>
+                            <p class="card-text text-muted">{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/projects}}
+            </div>
+        </div>
     </div>
-    {{/projects}}
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 #include "crow.h"
+
 crow::mustache::context get_projects_context() {
     crow::mustache::context ctx;
     ctx["project_count"] = 2;
@@ -28,6 +29,6 @@ int main() {
     return crow::mustache::load("contact.html").render();
 });
 
-    // Uruchamiamy serwer na porcie 8080
+    // Uruchamiamy serwer na porcie 54607
     app.port(54607).multithreaded().run();
 }
