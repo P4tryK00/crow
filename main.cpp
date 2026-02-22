@@ -29,5 +29,5 @@ int main() {
 });
 
     // Uruchamiamy serwer na porcie 8080
-    app.port(8080).multithreaded().run();
+    app.port(54607).multithreaded().run();
 }
