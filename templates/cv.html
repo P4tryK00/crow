@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patryk Jóźwiak - Resume</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50" style="font-family: 'Inter', sans-serif;">
+
+<nav class="bg-white shadow-sm mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="font-bold text-xl text-gray-900">pjozwiak.dev</a>
+        <div class="flex gap-6">
+            <a href="/" class="text-blue-600 font-medium">Main Page</a>
+            <a href="/projects" class="text-gray-600 hover:text-blue-600 font-medium">Projects</a>
+            <a href="/contact" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+
+    <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 mb-12">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="flex-shrink-0">
+                <img src="/static/myphoto.png" alt="Patryk Jóźwiak" class="w-48 h-48 rounded-full
+                object-cover shadow-md">
+            </div>
+
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                    Patryk Jóźwiak
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-600 mb-4">
+                    Aspiring Software Engineer / C++ Developer
+                </h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6 max-w-3xl">
+                    Hi ! I'm learning to write efficient C++ code, and this is my custome web server built with
+                    the Crow Framework.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg
+                    hover:bg-blue-700 transition-colors font-medium shadow-sm">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Contact Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/patryk-jóźwiak-7711b7306/" target="_blank" rel="noopener
+                    noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-600 text-blue-600
+                    rounded-lg hover:bg-blue-50 transition-colors font-medium">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/P4tryK00" target="_blank" rel="noopener noreferrer" class="inline-flex
+                    items-center gap-2 px-6 py-3 border-2 border-gray-700 text-gray-700 rounded-lg hover:bg-gray-50
+                    transition-colors font-medium">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Technical Skills</h2>
+        <div class="bg-white rounded-3xl shadow-sm p-8">
+            <div class="flex flex-wrap gap-3">
+                {{#skills}}
+                <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-medium text-sm border border-blue-200
+                hover:bg-blue-100 transition-colors">
+                        {{name}}
+                    </span>
+                {{/skills}}
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-12">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-900">
+                Recent Projects <span class="bg-gray-200 text-gray-800 text-sm py-1 px-3 rounded-full
+                ml-2 align-middle">{{project_count}}</span>
+            </h2>
+            <a href="/projects" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2">
+                View All Projects
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            {{#projects}}
+            <div class="bg-white rounded-3xl shadow-sm p-6 hover:shadow-md transition-shadow flex flex-col">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    {{name}}
+                </h3>
+                <p class="text-gray-700 mb-4 leading-relaxed flex-1">
+                    {{description}}
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {{#technologies}}
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium">{{name}}</span>
+                    {{/technologies}}
+                </div>
+                <div class="pt-4 border-t border-gray-100 mt-auto">
+                    <a href="/project/{{id}}" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+                        View Project Details
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            {{/projects}}
+        </div>
+    </div>
+</main>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin - Edit Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100" style="font-family: 'Inter', sans-serif;">
+
+<main class="max-w-3xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-3xl shadow-md p-8 border-t-8 border-amber-500">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Edit Project: {{title}}</h1>
+
+        <form action="/admin/edit/{{id}}" method="POST" class="space-y-6">
+
+            <div class="bg-red-50 p-4 rounded-xl border border-red-100">
+                <label class="block text-sm font-bold text-red-800 mb-1">Admin Password to Confirm Changes *</label>
+                <input type="password" name="secret_password" required class="w-full px-4 py-2 border border-red-300 rounded-lg outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Project Title *</label>
+                <input type="text" name="title" value="{{title}}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Short Description *</label>
+                <textarea name="description" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">{{description}}</textarea>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Detailed Case Study (HTML allowed)</label>
+                <textarea name="long_description" rows="8" class="w-full px-4 py-2 border border-gray-300 rounded-lg font-mono text-sm">{{long_description}}</textarea>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Main Image Path *</label>
+                    <input type="text" name="image" value="{{image}}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Technologies (comma separated) *</label>
+                    <input type="text" name="technologies" value="{{technologies_joined}}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Screenshots (comma separated)</label>
+                <input type="text" name="screenshots" value="{{screenshots_joined}}" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">GitHub URL *</label>
+                    <input type="text" name="github" value="{{githubUrl}}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Live Demo URL</label>
+                    <input type="text" name="live_url" value="{{liveUrl}}" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-amber-500 text-white font-bold py-3 px-4 rounded-xl hover:bg-amber-600 transition-colors mt-4">
+                Save Changes
+            </button>
+        </form>
+
+        <a href="/project/{{id}}" class="block text-center mt-6 text-gray-500 hover:text-amber-600 text-sm">Cancel and go back</a>
+    </div>
+</main>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
