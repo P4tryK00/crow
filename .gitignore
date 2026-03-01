@@ -30,3 +30,6 @@ compile_commands.json
 # Pliki systemowe (Windows / macOS)
 .DS_Store
 Thumbs.db
+
+
+projects.json
