@@ -49,7 +49,7 @@ void load_database() {
              "A custom-built web server acting as my personal portfolio. Developed from scratch in modern C++ using the Crow framework.",
              R"(
 <p>Building a personal portfolio usually involves reaching for standard web frameworks or CMS platforms. However,
-I wanted to treat my portfolio as a direct demonstration of my C++ skills in non typical task. The goal was to build a
+I wanted to treat my portfolio as a direct demonstration of my C++ skills in a non-typical scenario. The goal was to build a
 web server completely from scratch using modern C++.</p>
 <p>At the core of this project is the <strong>Crow framework</strong>, a fast and lightweight C++ microframework.
 Instead of relying on a heavy SQL database, the server utilizes a custom-built JSON data management system to persist
@@ -57,8 +57,7 @@ project data efficiently. I implemented dynamic routing, administrative POST end
 server-side rendering using the <strong>Mustache template engine</strong>. This ensures a strict separation between
 backend logic and frontend presentation.</p>
 <p>The user interface is crafted with HTML and <strong>Tailwind CSS</strong>, providing a fully responsive, modern,
-and clean design. The entire application is compiled using CMake and deployed on a Linux Virtual Private Server (VPS)
-behind a reverse proxy.</p>
+and clean design. The entire application is compiled using CMake and deployed on a Linux server behind a reverse proxy.</p>
             )",
              "static/crow.png",
              {},
