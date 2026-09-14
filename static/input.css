@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Wskazujemy, gdzie są pliki HTML (cofa się o 2 foldery do głównego katalogu 'crow') */
+@source "../../";
+
+/* Tutaj definiujemy Twoje autorskie kolory (zastępuje to plik tailwind.config.js) */
+@theme {
+    --color-dark: #121212;
+    --color-darker: #0a0a0a;
+    --color-card: #1e1e1e;
+    --color-primary: #3b82f6;
+}

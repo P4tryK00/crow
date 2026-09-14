@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(MojeCV)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -29,4 +30,15 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Crow)
 
 add_executable(MojeCV main.cpp)
-target_link_libraries(MojeCV PRIVATE Crow::Crow)
+target_link_libraries(MojeCV PRIVATE Crow::Crow ws2_32 mswsock)
+
+# Copy templates and static assets to the build directory after every build
+add_custom_command(TARGET MojeCV POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/templates"
+        "$<TARGET_FILE_DIR:MojeCV>/templates"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/static"
+        "$<TARGET_FILE_DIR:MojeCV>/static"
+    COMMENT "Copying templates and static assets to build directory..."
+)
